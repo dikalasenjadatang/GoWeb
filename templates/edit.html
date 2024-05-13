@@ -1,0 +1,52 @@
+{{define "content"}}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Golang Template</title>
+    </head>
+    <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Edit User</h6>
+                    </div>
+                    <div class="card-body">
+                        <form class="user" method="POST" action="/update">
+                            <input type="hidden" name="uid" value="{{ .Id }}"/>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control form-control-user" id="firstName"
+                                           name="firstName" placeholder="First Name"
+                                           value="{{.FirstName}}">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control form-control-user" id="lastName"
+                                           name="lastName" placeholder="Last Name"
+                                           value="{{.LastName}}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-user" id="email"
+                                       name="email" placeholder="Email Address"
+                                       value="{{.Email}}">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                                Update
+                            </button>
+                            <hr>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
+{{end}}
